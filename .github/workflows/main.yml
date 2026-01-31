@@ -1,0 +1,28 @@
+name: .NET CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dev:
+    name: Dev Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python dev.py
+
+  test:
+    name: Test Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python test.py
+
+  prod:
+    name: Prod Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python prod.py
